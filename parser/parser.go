@@ -56,6 +56,5 @@ func FindPagelets(html string) Pagelets {
 		pagelets[i] = NewPagelet(value)
 	}
 	result := Pagelets(pagelets)
-	result.Sort()
 	return result
 }

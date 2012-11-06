@@ -7,8 +7,9 @@ import (
 )
 
 func dispatch(pagelets parser.Pagelets, results chan string) {
-	prev_p := 0;
-	c := 0;
+	pagelets.Sort()
+	prev_p := 0
+	c := 0
 	i := 0
 	r := make(chan string)
 	for _, p := range pagelets {
