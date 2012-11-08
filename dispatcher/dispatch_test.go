@@ -12,7 +12,7 @@ func TestDispatch(t *testing.T) {
 	pagelets[1] = &parser.Pagelet{"2", 1, "http://bj.ganji.com/ajax.php?module=suggestion&keyword=b&domain=bj"}
 	pagelets[2] = &parser.Pagelet{"3", 2, "http://bj.ganji.com/ajax.php?module=suggestion&keyword=c&domain=bj"}
 
-	go dispatch(pagelets, results)
+	go Dispatch(pagelets, results)
 
 	for i := range results {
 		print(i)

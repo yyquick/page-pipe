@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 )
 
-func dispatch(pagelets parser.Pagelets, results chan string) {
+func Dispatch(pagelets parser.Pagelets, results chan string) {
 	pagelets.Sort()
 	prev_p := 0
 	c := 0
@@ -20,8 +20,8 @@ func dispatch(pagelets parser.Pagelets, results chan string) {
 			for i = 0; i < c; i++ {
 				s := <- r
 				results <- s
-				c = 0
 			}
+			c = 0
 			prev_p = p.Priority
 			c++
 			go getResult(p, r)
